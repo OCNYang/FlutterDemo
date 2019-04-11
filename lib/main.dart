@@ -4,7 +4,7 @@ import 'package:flutter_demo_app/padding.dart';
 import 'page.dart';
 import 'List.dart';
 
-void main() => runApp(PaddingPage());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -13,7 +13,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
@@ -62,23 +61,26 @@ class _MyHomePageState extends State<MyHomePage> {
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
+            addActionBtn(context, "Padding Page", new PaddingPage()),
+            addActionBtn(context, "List Page", new ListPage()),
+            addActionBtn(context, "Grid Page", new Grid()),
+            addActionBtn(context, "Page", new Page())
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+
+  RaisedButton addActionBtn(
+      BuildContext context, String btnStr, StatelessWidget skipPage) {
+    return RaisedButton(
+      onPressed: () {
+        Navigator.push(
+            context, new MaterialPageRoute(builder: (context) => skipPage));
+      },
+      child: new Text(btnStr),
     );
   }
 }
