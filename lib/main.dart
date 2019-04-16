@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo_app/Grid.dart';
 import 'package:flutter_demo_app/padding.dart';
 import 'package:flutter_demo_app/urltest.dart';
+import 'demo/dialog.dart';
 import 'demo/login/login.dart';
 import 'page.dart';
 import 'List.dart';
@@ -71,6 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
             addActionBtn(context, "Page", new Page()),
             addActionBtn(context, "Login", new LoginPage()),
             addActionBtn(context, "Open Web", new UrlTestPage()),
+            addActionBtn(context, "Dialog", new dialogpage()),
           ],
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.

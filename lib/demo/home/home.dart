@@ -15,7 +15,8 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[Image.asset("images/bg.jpg"),
-          ReorderableListView(children: , onReorder: null)],
+//          ReorderableListView(children:, onReorder: null),
+          ],
         ),
       ),
     );
