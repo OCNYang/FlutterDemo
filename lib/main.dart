@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_app/Grid.dart';
 import 'package:flutter_demo_app/padding.dart';
+import 'package:flutter_demo_app/urltest.dart';
+import 'demo/login/login.dart';
 import 'page.dart';
 import 'List.dart';
 
@@ -66,7 +68,9 @@ class _MyHomePageState extends State<MyHomePage> {
             addActionBtn(context, "Padding Page", new PaddingPage()),
             addActionBtn(context, "List Page", new ListPage()),
             addActionBtn(context, "Grid Page", new Grid()),
-            addActionBtn(context, "Page", new Page())
+            addActionBtn(context, "Page", new Page()),
+            addActionBtn(context, "Login", new LoginPage()),
+            addActionBtn(context, "Open Web", new UrlTestPage()),
           ],
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
@@ -74,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   RaisedButton addActionBtn(
-      BuildContext context, String btnStr, StatelessWidget skipPage) {
+      BuildContext context, String btnStr, Widget skipPage) {
     return RaisedButton(
       onPressed: () {
         Navigator.push(
