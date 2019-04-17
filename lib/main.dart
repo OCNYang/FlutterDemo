@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_app/Grid.dart';
 import 'package:flutter_demo_app/padding.dart';
+import 'package:flutter_demo_app/routertest.dart';
 import 'package:flutter_demo_app/sp.dart';
 import 'package:flutter_demo_app/urltest.dart';
+import 'RouterPath.dart';
 import 'demo/dialog.dart';
 import 'demo/index&Chose.dart';
 import 'demo/login/login.dart';
@@ -22,6 +24,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
+      routes: <String, WidgetBuilder>{
+        ROUTER_PATH_TEST: (_) => new RouterTestPage(),
+      },
     );
   }
 }
@@ -82,7 +87,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 addActionBtn(context, "File Save", new FileSavePage()),
               ],
               mainAxisAlignment: MainAxisAlignment.center,
-            )
+            ),
+            RaisedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed(ROUTER_PATH_TEST);
+              },
+              child: Text('静态路由跳转'),
+            ),
           ],
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
