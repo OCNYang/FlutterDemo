@@ -9,6 +9,8 @@ import 'demo/dialog.dart';
 import 'demo/index&Chose.dart';
 import 'demo/login/login.dart';
 import 'filesave.dart';
+import 'list1.dart';
+import 'list2.dart';
 import 'page.dart';
 import 'List.dart';
 
@@ -94,6 +96,14 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: Text('静态路由跳转'),
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                addActionBtn(context, 'list1', new List1Page()),
+                addActionBtn(context, 'list2', new List2Page()),
+                addActionBtn(context, 'list1', new List1Page()),
+              ],
+            )
           ],
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
